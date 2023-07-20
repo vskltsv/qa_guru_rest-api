@@ -99,6 +99,18 @@ public class ApiStatusTest {
                 .body("data.id", hasSize(6))
                 .body("total_pages", is(2));
     }
+    @Test
+    void deleteUsersTest() {
+        given()
+                .log().all()
+                .param("page", 1)
+                .when()
+                .delete("https://reqres.in/api/users/2")
+                .then()
+                .log().all()
+                .statusCode(204);
+
+    }
 }
 
 
