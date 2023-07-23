@@ -23,7 +23,7 @@ public class ApiStatusTest extends BaseApiClassTest {
     @Test
     @DisplayName("Проверка JSON-схемы")
     void userTest() {
-        UserDataModel userData = (UserDataModel) step("Запрос на /api/users?page=2 ", () ->
+        UserDataModel userData = step("Запрос на /api/users?page=2 ", () ->
                 given(userRequestSpec)
                         .log().all()
                         .param("page", 2)
