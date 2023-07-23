@@ -19,7 +19,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
 
     @Test
-    @DisplayName("Проверка получения пользователей по url - https://reqres.in/api/users?page=2")
+    @DisplayName(" Успешная проверка получения пользователей по url - https://reqres.in/api/users?page=2")
     void userTest() {
         UserDataModel userData = step("Запрос на /api/users?page=2", () ->
                 given(userRequestSpec)
@@ -42,7 +42,7 @@ public class ApiStatusTest extends BaseApiClassTest {
     }
 
     @Test
-    @DisplayName("Проверка создания пользователя по url - https://reqres.in/api/users")
+    @DisplayName("Успешная проверка создания пользователя по url - https://reqres.in/api/users")
     void createUserSuccessTest() {
         RequestUserModel requestUserModel = new RequestUserModel();
         requestUserModel.setName("morpheus");
