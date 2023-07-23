@@ -1,15 +1,13 @@
 package in.reqres.tests;
 
 
-import in.reqres.model.CreateUserResponseModel;
-import in.reqres.model.RequestUserModel;
-import in.reqres.model.UserDataModel;
+import in.reqres.model.*;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static in.reqres.spec.UserSpec.*;
+import static in.reqres.spec.BaseSpec.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ApiStatusTest extends BaseApiClassTest {
 
 
-
     @Test
     @DisplayName("Проверка получения пользователей по url - https://reqres.in/api/users?page=2")
     void userTest() {
@@ -29,10 +26,10 @@ public class ApiStatusTest extends BaseApiClassTest {
                         .log().all()
                         .param("page", 2)
                         .when()
-                        .get("/api/users?page=2")
+                        .get("/users?page=2")
                         .then()
                         .log().all()
-                        .spec(userResponseSpec)
+                        .spec(userResponseSpec200)
                         .extract().as(UserDataModel.class));
 
 
@@ -43,6 +40,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
 
     }
+
     @Test
     @DisplayName("Проверка создания пользователя по url - https://reqres.in/api/users")
     void createUserSuccessTest() {
@@ -54,14 +52,35 @@ public class ApiStatusTest extends BaseApiClassTest {
                 given(userRequestSpec)
                         .body(requestUserModel)
                         .when()
-                        .post("api/users")
+                        .post("/users")
                         .then()
-                        .spec(createUserResponseSpec)
+                        .spec(createUserResponseSpec201)
                         .extract().as(CreateUserResponseModel.class));
 
         step("Проверка ответа", () -> {
             assertEquals("morpheus", responseUser.getName());
             assertEquals("leader", responseUser.getJob());
         });
+    }
+
+    @Test
+    @DisplayName("Успешная регистрация по url - https://reqres.in/api/register")
+    void registerSuccessfulTest() {
+        RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
+        registerData.setEmail("eve.holt@reqres.in");
+        registerData.setPassword("pistol");
+
+        ResponseRegisterSuccessfulModel response = step("Make request", () ->
+                given(userRequestSpec)
+                        .body(registerData)
+                        .when()
+                        .post("/register")
+                        .then()
+                        .spec(registerResponseSpec200)
+                        .extract().as(ResponseRegisterSuccessfulModel.class));
+
+        step("Проверка ответа", () ->
+                assertEquals("QpwL5tke4Pnpja7X4", response.getToken()));
+
     }
 }

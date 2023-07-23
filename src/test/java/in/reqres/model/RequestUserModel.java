@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class RequestUserModel {
-    String name, job;
+    private String name, job;
 }
