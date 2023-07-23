@@ -12,7 +12,11 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 public class UserSpec {
     public static RequestSpecification userRequestSpec = with()
             .log().uri()
-            .log().method();
+            .log().method()
+            .log().body();
+
+
+
 
 
     public static ResponseSpecification userResponseSpec = new ResponseSpecBuilder()
