@@ -14,10 +14,12 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
+@Story("Тестовое задание API")
+@Tag("remoteApi")
 public class ApiStatusTest extends BaseApiClassTest {
 
-    @Story("Тестовое задание API")
-    @Tag("remoteApi")
+
+
     @Test
     @DisplayName("Проверка JSON-схемы")
     void userTest() {

@@ -14,7 +14,8 @@ public class UserDataModel {
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class DataClass {
-        public int id;
+        private int id;
+
 
     }
 }
