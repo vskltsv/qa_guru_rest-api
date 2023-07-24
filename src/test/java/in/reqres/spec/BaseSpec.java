@@ -18,8 +18,8 @@ public class BaseSpec {
             .log().method()
             .log().body()
             .filter(withCustomTemplates())
-            .basePath("/api")
-            .contentType(JSON);
+            .contentType(JSON)
+            .basePath("/api");
 
     public static ResponseSpecification userResponseSpec200 = new ResponseSpecBuilder()
             .log(STATUS)
