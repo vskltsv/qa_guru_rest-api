@@ -9,7 +9,6 @@ import static io.restassured.RestAssured.filters;
 public class BaseApiClassTest {
     @BeforeEach
     void beforeEach() {
-        filters(new AllureRestAssured());
         baseURI = "https://reqres.in/";
     }
 }
