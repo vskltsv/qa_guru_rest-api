@@ -83,4 +83,47 @@ public class ApiStatusTest extends BaseApiClassTest {
                 assertEquals("QpwL5tke4Pnpja7X4", response.getToken()));
 
     }
+
+
+    @Test
+    @DisplayName("Не успешная регистрация по url - https://reqres.in/api/register")
+    void registerUnsuccessful() {
+        RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
+        registerData.setEmail("sydney@fife");
+
+        RegisterResponseErrorModel registerResponse = step("Make request", () ->
+                given(userRequestSpec)
+                        .body(registerData)
+                        .when()
+                        .post("/register")
+                        .then()
+                        .spec(missingPassword400Spec)
+                        .extract().as(RegisterResponseErrorModel.class));
+
+        step("Проверка ответа", () ->
+                assertEquals("Missing password", registerResponse.getError()));
+    }
+
+    @Test
+    @DisplayName("Успешное обновление пользователя по url - https://reqres.in/api/users/2")
+    void updateUserSuccess() {
+        RequestUserModel requestData = new RequestUserModel();
+        requestData.setName("morpheus");
+        requestData.setJob("zion resident");
+
+        UpdateUserResponseModel responseUser = step("Make request", () ->
+                given(userRequestSpec)
+                        .body(requestData)
+                        .when()
+                        .put("/users/2")
+                        .then()
+                        .spec(updateUserResponse200Spec)
+                        .extract().as(UpdateUserResponseModel.class));
+
+        step("check response", () -> {
+            assertEquals("morpheus", responseUser.getName());
+            assertEquals("zion resident", responseUser.getJob());
+        });
+
+    }
 }
