@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class RegisterResponseErrorModel {
-   private String error;
+    private String error;
 }

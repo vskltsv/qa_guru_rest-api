@@ -1,4 +1,5 @@
 package in.reqres.helpers;
+
 import io.qameta.allure.restassured.AllureRestAssured;
 
 public class CustomAllureListener {
