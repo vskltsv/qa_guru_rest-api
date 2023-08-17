@@ -63,7 +63,7 @@ gradle clean test
 </p>
 
 <a id="allure"></a>
-## <img src="media/logo/Allure.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/allure/) отчеты
+## <img src="media/logo/Allure_Report.svg" width="25" height="25"/></a> [Allure Report](https://jenkins.autotests.cloud/job/vskltsv_hw_rest-api_jenkins/allure/) отчеты
 
 ### Основное окно
 
@@ -81,7 +81,7 @@ gradle clean test
 </p>
 
 <a id="allure-testops"></a>
-## <img src="media/logo/Allure_TO.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3625/dashboards)
+## <img src="media/logo/AllureTestOps.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3625/dashboards)
 
 ### Основное окно
 
