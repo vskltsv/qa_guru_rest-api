@@ -38,7 +38,10 @@ public class BaseSpec {
             .expectBody("id", notNullValue())
             .expectBody("createdAt", notNullValue())
             .build();
-
+    public static ResponseSpecification response204 = new ResponseSpecBuilder()
+            .log(STATUS)
+            .expectStatusCode(204)
+            .build();
     public static ResponseSpecification registerResponseSpec200 = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)

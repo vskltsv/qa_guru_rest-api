@@ -17,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Tag("remoteApi")
 public class ApiStatusTest extends BaseApiClassTest {
 
-
     @Test
     @DisplayName(" Успешная проверка получения пользователей по url - https://reqres.in/api/users?page=2")
+    @Tag("positive")
     void userTest() {
         UserDataModel userData = step("Запрос на /api/users?page=2", () ->
                 given(userRequestSpec)
@@ -43,6 +43,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
     @Test
     @DisplayName("Успешная проверка создания пользователя по url - https://reqres.in/api/users")
+    @Tag("positive")
     void createUserSuccessTest() {
         RequestUserModel requestUserModel = new RequestUserModel();
         requestUserModel.setName("morpheus");
@@ -65,6 +66,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
     @Test
     @DisplayName("Успешная регистрация по url - https://reqres.in/api/register")
+    @Tag("positive")
     void registerSuccessfulTest() {
         RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
         registerData.setEmail("eve.holt@reqres.in");
@@ -87,6 +89,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
     @Test
     @DisplayName("Не успешная регистрация по url - https://reqres.in/api/register")
+    @Tag("negative")
     void registerUnsuccessful() {
         RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
         registerData.setEmail("sydney@fife");
@@ -104,8 +107,24 @@ public class ApiStatusTest extends BaseApiClassTest {
                 assertEquals("Missing password", registerResponse.getError()));
     }
 
+
+    @Test
+    @DisplayName("Delete user by id")
+    @Tag("positive")
+    void deleteUserByIdTest() {
+
+        given()
+                .spec(userRequestSpec)
+                .when()
+                .pathParam("id", "2")
+                .delete("/users/{id}")
+                .then()
+                .spec(response204);
+    }
+
     @Test
     @DisplayName("Успешное обновление пользователя по url - https://reqres.in/api/users/2")
+    @Tag("positive")
     void updateUserSuccess() {
         RequestUserModel requestData = new RequestUserModel();
         requestData.setName("morpheus");
