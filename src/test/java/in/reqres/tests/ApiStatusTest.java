@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @Story("Тестовое задание API")
-@Tag("remoteApi")
+@Tag("test")
 public class ApiStatusTest extends BaseApiClassTest {
 
     @Test
