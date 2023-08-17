@@ -32,10 +32,14 @@
 
 <a id="console"></a>
 ##  Запуск тестов из терминала
-### Локальный запуск тестов
 
 ```
 gradle clean test  
+```
+***Удалённый запуск через Jenkins:***
+
+```bash  
+clean test
 ```
 
 <a id="jenkins"></a>
@@ -43,7 +47,7 @@ gradle clean test
 
 <p align="center">
 
-> Для запуска необходимо нажать "Собрать сейчас".
+> Для запуска необходимо нажать "Собрать с параметрами".
 
 <a href="https://jenkins.autotests.cloud/job/AD_demo_api_reqres/"><img src="media/screenshots/JenkinsSborka.png" alt="Jenkins"/></a>
 
