@@ -89,7 +89,7 @@ gradle clean test
 <img title="Allure TestOps" src="media/screenshots/Dashboard_TO.png">
 </p>
 
-### Дерево тестов с разделением по фичам
+### Иерархия тестов в ветке
 
 <p align="center">
 <img title="Allure TestOps" src="media/screenshots/TreeByFeatures_TO.png">
