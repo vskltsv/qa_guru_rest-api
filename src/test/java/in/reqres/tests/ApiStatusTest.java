@@ -109,7 +109,7 @@ public class ApiStatusTest extends BaseApiClassTest {
 
 
     @Test
-    @DisplayName("Delete user by id")
+    @DisplayName("Успешное удаление юзера по id")
     @Tag("positive")
     void deleteUserByIdTest() {
 
