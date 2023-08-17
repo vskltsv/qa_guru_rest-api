@@ -28,7 +28,25 @@
 |:--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------:|------------------------------------------------------------------------------------------------------------------------------|
 | <a href="https://www.java.com/"><img src="media/logo/Java.svg" width="50" height="50"  alt="Java"/></a> | <a id ="tech" href="https://www.jetbrains.com/idea/"><img src="media/logo/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a> | <a href="https://github.com/allure-framework"><img src="media/logo/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <a href="https://qameta.io/"><img src="media/logo/AllureTestOps.svg" width="50" height="50"  alt="Allure TestOps"/></a> | <a href="https://github.com/"><img src="media/logo/GitHub.svg" width="50" height="50"  alt="Github"/></a> | <a href="https://junit.org/junit5/"><img src="media/logo/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a> | <a href="https://gradle.org/"><img src="media/logo/Gradle.svg" width="50" height="50"  alt="Gradle"/></a> | <a href="https://rest-assured.io/"><img src="media/logo/RestAssured.svg" width="50" height="50"  alt="RestAssured"/></a>  |   <a href="https://www.jenkins.io/"><img src="media/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a> | <a href="https://www.atlassian.com/ru/software/jira"><img src="media/logo/Jira.svg" width="50" height="50"  alt="Jira"/></a> |
 
+Автотесты в этом проекте написаны на Java с использованием фреймворка [Selenide](https://selenide.org/).\
+<code>Gradle</code> — используется как инструмент автоматизации сборки.\
+<code>JUnit5</code> — для выполнения тестов.\
+<code>Selenoid</code> — для удаленного запуска браузера в Docker контейнерах.\
+<code>REST Assured</code> — для тестирования REST-API сервисов.\
+<code>Jenkins</code> — CI/CD для запуска тестов удаленно.\
+<code>Browserstack</code> — для запуска мобильных тестов удаленно.\
+<code>Appium</code>, <code>Android Studio</code> — для запуска мобильных тестов локально на эмуляторе мобильных устройств.\
+<code>Allure Report</code> — для визуализации результатов тестирования.\
+<code>Allure TestOps</code> — как система управления тестированием.\
+<code>Jira</code> — как инструмент управления проектом и таск-трекер.\
+<code>Telegram Bot</code> — для уведомлений о результатах тестирования.
 
+Allure-отчет включает в себя:
+* шаги выполнения тестов;
+* скриншот страницы в браузере в момент окончания автотеста;
+* Page Source;
+* логи браузерной консоли;
+* видео выполнения автотеста.
 
 <a id="console"></a>
 ##  Запуск тестов из терминала
