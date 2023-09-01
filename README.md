@@ -2,7 +2,7 @@
 
 ![WB_logo.jpg](media/logo/reqres_logo.png)
 
-## :page_with_curl: Содержание 
+##  Содержание 
 
 * <a href="#tools">Технологии и инструменты</a>
 
@@ -42,7 +42,7 @@
 ##  Запуск тестов из терминала
 
 ```
-gradle clean test  
+gradle clean  
 ```
 ***Удалённый запуск через Jenkins:***
 
