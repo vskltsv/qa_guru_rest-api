@@ -3,7 +3,6 @@ package in.reqres.tests;
 
 import in.reqres.model.*;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ApiStatusTest extends BaseApiClassTest {
 
     @Test
-    @DisplayName(" Успешная проверка получения пользователей по url - https://reqres.in/api/users?page=2")
     @Tag("positive")
     void userTest() {
         UserDataModel userData = step("Запрос на /api/users?page=2", () ->
@@ -42,7 +40,6 @@ public class ApiStatusTest extends BaseApiClassTest {
     }
 
     @Test
-    @DisplayName("Успешная проверка создания пользователя по url - https://reqres.in/api/users")
     @Tag("positive")
     void createUserSuccessTest() {
         RequestUserModel requestUserModel = new RequestUserModel();
@@ -65,7 +62,6 @@ public class ApiStatusTest extends BaseApiClassTest {
     }
 
     @Test
-    @DisplayName("Успешная регистрация по url - https://reqres.in/api/register")
     @Tag("positive")
     void registerSuccessfulTest() {
         RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
@@ -88,7 +84,6 @@ public class ApiStatusTest extends BaseApiClassTest {
 
 
     @Test
-    @DisplayName("Не успешная регистрация по url - https://reqres.in/api/register")
     @Tag("negative")
     void registerUnsuccessful() {
         RequestRegisterSuccessfulModel registerData = new RequestRegisterSuccessfulModel();
@@ -109,7 +104,6 @@ public class ApiStatusTest extends BaseApiClassTest {
 
 
     @Test
-    @DisplayName("Успешное удаление юзера по id")
     @Tag("positive")
     void deleteUserByIdTest() {
 
@@ -123,7 +117,6 @@ public class ApiStatusTest extends BaseApiClassTest {
     }
 
     @Test
-    @DisplayName("Успешное обновление пользователя по url - https://reqres.in/api/users/2")
     @Tag("positive")
     void updateUserSuccess() {
         RequestUserModel requestData = new RequestUserModel();
